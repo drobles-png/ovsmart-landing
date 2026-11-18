@@ -2,29 +2,37 @@
 // SOLO variables y mixins aquí (nada que emita CSS). Lo que emite CSS va en global.scss.
 // Para un cliente nuevo: cambiar los colores de "Marca" y la familia tipográfica.
 
-// ── Marca (neutros por defecto: reemplazar con los del cliente) ───────────────
-$primary: #0057ff; // CTAs, enlaces, acentos
-$primary-hover: #0046cc;
-$on-primary: #ffffff; // texto sobre $primary (contraste 4.5:1 mínimo)
-$primary-soft: #e6eeff; // fondos de chips y opciones seleccionadas
+// ── Marca OV S-Mart (azul del logo + la luz cálida que se enciende) ──────────
+$primary: #0448c8; // azul del logo: CTAs y enlaces (7.4:1 con blanco)
+$primary-hover: #0339a0;
+$on-primary: #ffffff;
+$primary-soft: #e4ecfb; // fondos de opciones seleccionadas
+$glow: #ffc24b; // luz encendida: solo sobre fondos oscuros (nunca texto sobre claro)
+$glow-soft: rgba(255, 194, 75, 0.18);
 
-// ── Neutros ───────────────────────────────────────────────────────────────────
-$surface: #f6f7f9; // fondo de página
+// ── Neutros (día claro / noche azul) ──────────────────────────────────────────
+$surface: #f4f6fb; // fondo de página
 $raised: #ffffff; // tarjetas, modales
-$surface-dark: #07090e; // secciones oscuras (hero de cierre, footer)
-$line: #dce0e7; // bordes de 1px
-$ink: #07090e; // texto principal
-$ink-muted: #576071; // texto secundario
-$ink-on-dark: #f2f4f8;
-$ink-on-dark-muted: #a3abba;
+$surface-dark: #061433; // la casa de noche
+$night-2: #0b1d47; // capa sobre la noche
+$line: #dbe1ee; // bordes de 1px
+$ink: #0b1630; // texto principal
+$ink-muted: #4a5675; // texto secundario (7.2:1 sobre $surface)
+$ink-on-dark: #f1f4fb;
+$ink-on-dark-muted: #a9b5d1;
 
 // ── Estados ───────────────────────────────────────────────────────────────────
 $success: #0f8a4b;
 $error: #d1142a;
 
 // ── Tipografía (se carga en index.html desde Google Fonts) ────────────────────
-$font-sans: 'Geist', 'Inter', system-ui, sans-serif;
-$font-mono: 'Geist Mono', ui-monospace, monospace;
+$font-sans: 'Poppins', system-ui, sans-serif; // textos (ficha)
+$font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif; // títulos (ficha)
+$font-word: 'Saira', $font-display; // solo el wordmark OV-SMART
+$font-mono: $font-sans; // la plantilla usa $font-mono en etiquetas y números
+
+// ── Movimiento ────────────────────────────────────────────────────────────────
+$ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 
 // ── Forma ─────────────────────────────────────────────────────────────────────
 $radius-sm: 6px;

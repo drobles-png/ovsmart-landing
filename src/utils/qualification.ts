@@ -21,41 +21,44 @@ export interface Question {
 
 export const QUESTIONS = [
   {
-    key: 'perfil',
-    title: '[Pregunta 1: ¿Qué te describe mejor?]',
-    noteLabel: 'Perfil',
+    key: 'espacio',
+    title: '¿Qué quieres automatizar?',
+    noteLabel: 'Espacio',
     options: [
-      { value: 'perfil_a', label: '[Perfil ideal A]' },
-      { value: 'perfil_b', label: '[Perfil ideal B]' },
-      { value: 'solo_info', label: '[Solo quiero informarme por ahora]' },
+      { value: 'casa_terminada', label: 'Mi casa, ya terminada' },
+      { value: 'en_construccion', label: 'Una casa que estoy construyendo' },
+      { value: 'oficina', label: 'Una oficina o un consultorio' },
     ],
   },
   {
-    key: 'situacion',
-    title: '[Pregunta 2: ¿En qué punto estás hoy?]',
-    noteLabel: 'Situación',
+    key: 'zona',
+    title: '¿Dónde está?',
+    noteLabel: 'Zona',
     options: [
-      { value: 'empezando', label: '[Estoy empezando]' },
-      { value: 'en_marcha', label: '[Ya lo hago y quiero crecer]' },
+      { value: 'guayaquil', label: 'Guayaquil' },
+      { value: 'daule', label: 'Daule' },
+      { value: 'mocoli', label: 'Mocolí' },
+      { value: 'otra_zona', label: 'En otra ciudad' },
     ],
   },
   {
     key: 'inversion',
-    title: '[Pregunta 3: ¿Cómo piensas invertir?]',
+    title: '¿Cuánto piensas invertir en tu proyecto?',
     noteLabel: 'Inversión',
     options: [
-      { value: 'tengo_capital', label: '[Tengo el capital para invertir]' },
-      { value: 'financiamiento', label: '[Con financiamiento o un socio]' },
-      { value: 'sin_presupuesto', label: '[Por ahora no tengo cómo invertir]' },
+      { value: 'menos_1k', label: 'Menos de $1.000' },
+      { value: 'de_1k_a_3k', label: 'Entre $1.000 y $3.000' },
+      { value: 'de_3k_a_6k', label: 'Entre $3.000 y $6.000' },
+      { value: 'mas_6k', label: 'Más de $6.000' },
     ],
   },
 ] as const satisfies readonly Question[]
 
 /** Último paso: pregunta abierta (va a GHL como `objetivo`). */
 export const OBJETIVO = {
-  title: '[Pregunta abierta: ¿Qué quieres lograr?]',
-  placeholder: '[Ejemplo de respuesta que oriente al lead]',
-  minWords: 10,
+  title: '¿Qué te gustaría que fuera más fácil en tu casa?',
+  placeholder: 'Ej.: que las luces de abajo se apaguen solas en la noche y que el wifi llegue al cuarto del fondo',
+  minWords: 6,
 }
 
 export type QuestionKey = (typeof QUESTIONS)[number]['key']
@@ -70,12 +73,11 @@ export function labelFor(key: QuestionKey, value: string): string {
 }
 
 // ── Regla de cualificación ────────────────────────────────────────────────────
-// Por defecto se descarta solo a quien viene "a informarse" o no tiene cómo invertir.
-// El resto de respuestas no descalifica: sirven para preparar la reunión.
-// Ajustar con el cliente (quién SÍ es cliente) y documentarlo en el CLAUDE.md del proyecto.
+// Del VSL: "Trabajo con proyectos desde mil dólares" y atiende en Guayaquil, Daule y Mocolí.
+// No califica: inversión menor a $1.000 o fuera de esas zonas. Confirmar con Luis.
 const DISQUALIFY: Partial<Record<QuestionKey, readonly string[]>> = {
-  perfil: ['solo_info'],
-  inversion: ['sin_presupuesto'],
+  zona: ['otra_zona'],
+  inversion: ['menos_1k'],
 }
 
 export function qualifies(a: Answers): boolean {
