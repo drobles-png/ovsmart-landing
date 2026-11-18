@@ -73,7 +73,7 @@ export const PAYMENT_PROVIDER: 'payphone' | 'link' = 'payphone'
 // Solo con 'link': URL de la pasarela; debe redirigir al terminar a <dominio>/inscripcion-confirmada
 export const PAYMENT_URL = ''
 // WhatsApp de respaldo para cobrar si el pago no está configurado (formato 593987654321)
-export const WHATSAPP_NUMBER = ''
+export const WHATSAPP_NUMBER = '593963301617' // Luis · 096 330 1617
 
 // ── Evento en vivo (OPCIONAL) ─────────────────────────────────────────────────
 // ISO con zona: '2026-11-20T19:00:00-05:00'. Vacío = "Te avisamos la fecha por WhatsApp y correo"

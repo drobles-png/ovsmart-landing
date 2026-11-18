@@ -195,6 +195,9 @@ export const BOOKING = {
 export const BOOKED = {
   title: 'Tu visita técnica está confirmada',
   sub: 'Te enviamos los detalles a tu correo.',
+  whatsappCta: 'Escríbele a Luis por WhatsApp',
+  whatsappMsg: (nombre: string) =>
+    `Hola Luis${nombre ? `, soy ${nombre}` : ''}. Acabo de agendar mi visita técnica.`,
   steps: [
     { icon: 'fa-solid fa-envelope', title: 'Revisa tu correo', text: 'Ahí tienes la fecha y la hora de la visita.' },
     { icon: 'fa-brands fa-whatsapp', title: 'Te escribo por WhatsApp', text: 'Para confirmar la dirección y resolver dudas antes.' },

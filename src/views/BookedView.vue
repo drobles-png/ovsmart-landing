@@ -3,12 +3,13 @@
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import StepShell from '@/components/StepShell.vue'
-import { IS_LOCAL, STORAGE_PREFIX } from '@/config/funnel'
+import { IS_LOCAL, STORAGE_PREFIX, whatsappLink } from '@/config/funnel'
 import { BOOKED } from '@/content/copy'
 import { useContactStore } from '@/stores/contact'
 
 const router = useRouter()
 const nombre = useContactStore().get().nombre
+const waHref = whatsappLink(BOOKED.whatsappMsg(nombre || ''))
 
 onMounted(() => {
   const bookedAt = Number(localStorage.getItem(`${STORAGE_PREFIX}_booked_at`))
@@ -33,6 +34,10 @@ onMounted(() => {
           </div>
         </li>
       </ol>
+
+      <a v-if="waHref" :href="waHref" target="_blank" rel="noopener noreferrer" class="btn btn--lg done__wa">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> {{ BOOKED.whatsappCta }}
+      </a>
     </section>
   </StepShell>
 </template>
@@ -93,6 +98,14 @@ onMounted(() => {
     p {
       color: $ink-muted;
       font-size: 0.9rem;
+    }
+  }
+
+  &__wa {
+    margin-top: 24px;
+
+    @media (max-width: 600px) {
+      width: 100%;
     }
   }
 }
