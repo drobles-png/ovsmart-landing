@@ -46,10 +46,10 @@ export const QUESTIONS = [
     title: '¿Cuánto piensas invertir en tu proyecto?',
     noteLabel: 'Inversión',
     options: [
-      { value: 'menos_1k', label: 'Menos de $1.000' },
       { value: 'de_1k_a_3k', label: 'Entre $1.000 y $3.000' },
       { value: 'de_3k_a_6k', label: 'Entre $3.000 y $6.000' },
       { value: 'mas_6k', label: 'Más de $6.000' },
+      { value: 'menos_1k', label: 'Menos de $1.000' },
     ],
   },
 ] as const satisfies readonly Question[]
