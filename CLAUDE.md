@@ -41,4 +41,6 @@ Saira 700 solo para el wordmark (subset `text=OV-SMART`).
 - Fotos de Luis (portada del video y su sección) y, si hay, fotos de casas instaladas.
 - `LEGAL` (razón social, RUC, correo): las páginas legales muestran "[Pendiente]". No pautar así.
 - Confirmar la regla de cualificación con Luis. `WHATSAPP_NUMBER` para `/sin-espacio`.
-- Deploy en Vercel (`ovsmart-lng.vercel.app`), env vars de CAPI, Probador de eventos, workflows de GHL.
+- Publicado en https://ovsmart-lng.vercel.app (Vercel `bakano-proyects/ovsmart-landing`, Git conectado). CAPI desde la landing
+  (`META_PIXEL_ID` y `META_CAPI_TOKEN` en Vercel). Falta: quitar el dominio `ovsmart-landing.vercel.app` (panel → Domains),
+  Probador de eventos con `META_CAPI_TEST_EVENT_CODE` y workflows de GHL (snapshot).
