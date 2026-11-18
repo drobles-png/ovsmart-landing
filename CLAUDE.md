@@ -43,4 +43,5 @@ Saira 700 solo para el wordmark (subset `text=OV-SMART`).
 - `WHATSAPP_NUMBER` para `/sin-espacio`.
 - Publicado en https://ovsmart-lng.vercel.app (Vercel `bakano-proyects/ovsmart-landing`, Git conectado). CAPI desde la landing
   (`META_PIXEL_ID` y `META_CAPI_TOKEN` en Vercel). Falta: quitar el dominio `ovsmart-landing.vercel.app` (panel → Domains),
-  Probador de eventos con `META_CAPI_TEST_EVENT_CODE` y workflows de GHL (snapshot).
+  Workflows de GHL listos y probados (cita → "Agendó llamada"). Dedup Pixel+CAPI verificada por script; código de prueba quitado.
+- Cambiar la fuente "Funnel VSL <cliente>" en los workflows de GHL. Borrar contactos de prueba.
