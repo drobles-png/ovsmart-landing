@@ -43,3 +43,7 @@ Saira 700 solo para el wordmark (subset `text=OV-SMART`).
 - Publicado en https://ovsmart-lng.vercel.app (Vercel `bakano-proyects/ovsmart-landing`, Git conectado). CAPI desde la landing
   (`META_PIXEL_ID` y `META_CAPI_TOKEN` en Vercel). Un solo dominio (el sobrante ya se quitó).
   Workflows de GHL listos y probados (cita → "Agendó llamada"). Dedup Pixel+CAPI verificada por script; código de prueba quitado.
+
+## Auditoría 22-nov-2026
+- Funnel probado con lead real en GHL: registro, cualificación y cita → oportunidad en "Agendó llamada" ✓.
+- Ojo: en la auditoría quedó 1 evento **Lead de prueba** en el pixel (event_id `audit_token_check`, sin datos de persona) al validar el token de CAPI.
