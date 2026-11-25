@@ -15,6 +15,7 @@ import {
   STORAGE_PREFIX,
   VSL_POSTER,
   VSL_POSTER_FALLBACK,
+  PERSON_PHOTO,
 } from '@/config/funnel'
 import { LANDING } from '@/content/copy'
 import { captureFbParams } from '@/utils/fbclid'
@@ -208,7 +209,7 @@ onBeforeUnmount(() => {
     <section class="about" aria-labelledby="about-title">
       <div class="wrap about__grid">
         <div class="about__photo" aria-hidden="true">
-          <img v-if="poster" :src="poster" alt="" loading="lazy" decoding="async" />
+          <img v-if="PERSON_PHOTO" :src="PERSON_PHOTO" alt="" loading="lazy" decoding="async" />
           <OvMark v-else class="about__mark" lit />
         </div>
 
@@ -428,7 +429,6 @@ onBeforeUnmount(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 15%; // foto vertical: que no corte la cara en 4:3
   }
 
   &__house {
