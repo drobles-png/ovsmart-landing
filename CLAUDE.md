@@ -16,7 +16,7 @@ E2E: `python3 ~/.claude/skills/landings-vsl/scripts/e2e_funnel.py --base http://
 ## Config (`src/config/funnel.ts`)
 Pixel `3778681772287543` · webhooks de contacto (`…BGDwzu6d`) y cualificación (`…9TUnkOdA`) de la subcuenta del cliente ·
 `ASK_CITY = false` (la zona va en la cualificación) · `STORAGE_PREFIX = 'ov'` · `FUNNEL_TAG = 'funnel-ovsmart'` ·
-`SITE_URL = https://ovsmart-lng.vercel.app` · `WHATSAPP_NUMBER = 593963301617` (Luis; botón en `/cita-confirmada`) · `WISTIA_MEDIA_ID = kzzqhudbm0` · `VSL_POSTER` vacío (pendiente).
+`SITE_URL = https://ovsmart-lng.vercel.app` · `WHATSAPP_NUMBER = 593963301617` (Luis; botón en `/cita-confirmada`) · `WISTIA_MEDIA_ID = kzzqhudbm0` · `VSL_POSTER_FALLBACK = /luis.webp` (foto de Luis).
 `META_CAPI_TOKEN` solo en `.env.local` y Vercel.
 
 ## Landing (FunnelView.vue) — estructura corta, 4 bloques
@@ -27,7 +27,7 @@ Recurso propio: la casa de noche cuyas luces se encienden solas. Isotipo redibuj
    uno tras otro (el aire de la habitación queda encendido, como dice el VSL).
 3. Cómo trabajo: las 5 áreas en lista editorial + "Así empezamos" (4 pasos con la señal wifi del logo).
 4. Luis: presentación, cita, cifras (4 años · 1 semana · 1 año de garantía), "Es para ti si" y CTA.
-Sin foto de Luis, la portada y su sección muestran el isotipo encendido; al poner `VSL_POSTER(_FALLBACK)` salen las fotos.
+Portada y sección de Luis usan su foto (`public/luis.webp`); sin foto vuelven al isotipo encendido.
 Marca: `tokens.scss` (azul #0448c8, noche #061433, luz #ffc24b). Helvetica Neue (títulos) + Poppins (texto) de la ficha;
 Saira 700 solo para el wordmark (subset `text=OV-SMART`).
 
@@ -37,7 +37,7 @@ Saira 700 solo para el wordmark (subset `text=OV-SMART`).
 **No califica** si `zona = otra_zona` o `inversion = menos_1k` (VSL: "proyectos desde mil dólares"). Regla A, decidida con David el 18 nov 2026.
 
 ## Pendientes
-- Fotos de Luis (portada del video y su sección) y, si hay, fotos de casas instaladas.
+- Fotos de casas instaladas (opcional).
 - `LEGAL` (razón social, RUC, correo): las páginas legales muestran "[Pendiente]". No pautar así.
 - Publicado en https://ovsmart-lng.vercel.app (Vercel `bakano-proyects/ovsmart-landing`, Git conectado). CAPI desde la landing
   (`META_PIXEL_ID` y `META_CAPI_TOKEN` en Vercel). Un solo dominio (el sobrante ya se quitó).

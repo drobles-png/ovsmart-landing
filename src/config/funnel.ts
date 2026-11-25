@@ -37,7 +37,7 @@ export const GHL_BOOKING_FRAME_ID = 'uWVEIjy5aPLrrSu8U27J_1795020557074'
 // Portada del video en la landing (foto de quien habla). URL de Cloudinary (f_auto,q_auto,w_1200).
 // Si el CDN falla se usa VSL_POSTER_FALLBACK (archivo en public/). Ambos vacíos = recuadro oscuro.
 export const VSL_POSTER = ''
-export const VSL_POSTER_FALLBACK = '' // ej. '/vsl-poster.webp'
+export const VSL_POSTER_FALLBACK = '/luis.webp'
 // Logo como URL absoluta (para el JSON-LD de la empresa). Vacío = el JSON-LD va sin logo.
 export const LOGO_URL =
   'https://res.cloudinary.com/xivqv1l8/image/upload/v1793740310/resources/6ac40098b18589d5fc071c2e/azcf0ayviszfymjuwstk.png'

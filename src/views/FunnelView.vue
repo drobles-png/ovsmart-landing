@@ -428,6 +428,7 @@ onBeforeUnmount(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50% 15%; // foto vertical: que no corte la cara en 4:3
   }
 
   &__house {
