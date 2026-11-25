@@ -16,7 +16,7 @@ E2E: `python3 ~/.claude/skills/landings-vsl/scripts/e2e_funnel.py --base http://
 ## Config (`src/config/funnel.ts`)
 Pixel `3778681772287543` · webhooks de contacto (`…BGDwzu6d`) y cualificación (`…9TUnkOdA`) de la subcuenta del cliente ·
 `ASK_CITY = false` (la zona va en la cualificación) · `STORAGE_PREFIX = 'ov'` · `FUNNEL_TAG = 'funnel-ovsmart'` ·
-`SITE_URL = https://ovsmart-lng.vercel.app` · `WHATSAPP_NUMBER = 593963301617` (Luis; botón en `/cita-confirmada`) · `WISTIA_MEDIA_ID` vacío (pendiente) · `VSL_POSTER` vacío (pendiente).
+`SITE_URL = https://ovsmart-lng.vercel.app` · `WHATSAPP_NUMBER = 593963301617` (Luis; botón en `/cita-confirmada`) · `WISTIA_MEDIA_ID = kzzqhudbm0` · `VSL_POSTER` vacío (pendiente).
 `META_CAPI_TOKEN` solo en `.env.local` y Vercel.
 
 ## Landing (FunnelView.vue) — estructura corta, 4 bloques
@@ -37,7 +37,6 @@ Saira 700 solo para el wordmark (subset `text=OV-SMART`).
 **No califica** si `zona = otra_zona` o `inversion = menos_1k` (VSL: "proyectos desde mil dólares"). Regla A, decidida con David el 18 nov 2026.
 
 ## Pendientes
-- Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - Fotos de Luis (portada del video y su sección) y, si hay, fotos de casas instaladas.
 - `LEGAL` (razón social, RUC, correo): las páginas legales muestran "[Pendiente]". No pautar así.
 - Publicado en https://ovsmart-lng.vercel.app (Vercel `bakano-proyects/ovsmart-landing`, Git conectado). CAPI desde la landing

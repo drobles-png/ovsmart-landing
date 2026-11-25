@@ -43,7 +43,7 @@ export const LOGO_URL =
   'https://res.cloudinary.com/xivqv1l8/image/upload/v1793740310/resources/6ac40098b18589d5fc071c2e/azcf0ayviszfymjuwstk.png'
 
 // ── Video ─────────────────────────────────────────────────────────────────────
-export const WISTIA_MEDIA_ID = ''
+export const WISTIA_MEDIA_ID = 'kzzqhudbm0'
 // Segundos que el CTA de /ver-video queda bloqueado (0 = sin bloqueo). En localhost son 3 s.
 export const CTA_UNLOCK_SECONDS = 120
 
